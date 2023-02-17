@@ -1,0 +1,21 @@
+ First we create a text file with a few duplicate lines that we can use for testing. 
+cat "test.txt"
+ Riya
+Chaithu
+ Riya
+ Priya
+ viewing the file
+cat "test.txt"
+Riya
+Chaithu
+Riya
+Priya
+
+we can use the 'sort' and 'uniq' commands in linux to get the duplicate word count in a file, and then redirect the output to a new file.
+This command will sort the contents of 'filename' and then pass them to the 'uniq' command, which will removeall duplicates except for the onces that appear more than once.
+
+sort <filename> | uniq -c | grep -v "^\s*1\s*" > output_file.txt
+
+2 Riya
+1 Chaithu
+1 Priya
